@@ -5,7 +5,6 @@
 using namespace std;
 
 int main() {
-    // Настройка для русского языка
     setlocale(LC_ALL, "Russian");
     
     string playerName = "Игрок";
@@ -14,13 +13,12 @@ int main() {
     int lives = 3;
     bool gameRunning = true;
     
-    // Приветствие
+
     cout << "======================================\n";
     cout << "         ВИКТОРИНА ПО IT\n";
     cout << "======================================\n\n";
     
     while (gameRunning) {
-        // Главное меню
         cout << "========== ГЛАВНОЕ МЕНЮ ==========\n";
         cout << "Игрок: " << playerName << " | Жизни: " << lives << " | Очки: " << score << "\n\n";
         cout << "[1] Начать игру\n";
@@ -31,10 +29,10 @@ int main() {
         cin >> choice;
         
         if (choice == 1) {
-            // Начать игру
+        
             cout << "\n========== НАЧАЛО ИГРЫ ==========\n";
             
-            // Примеры вопросов
+           
             string questions[5] = {
                 "Какой язык программирования создал Бьёрн Страуструп?",
                 "Что означает аббревиатура 'HTML'?",
@@ -53,7 +51,7 @@ int main() {
             
             int userAnswer;
             
-            // Игровой цикл
+     
             for (int i = 0; i < 5 && lives > 0; i++) {
                 cout << "\n[ ] Вопрос " << (i + 1) << ": " << questions[i] << "\n";
                 cout << "\n[1] Ответить на вопрос\n";
@@ -67,7 +65,7 @@ int main() {
                     cout << "Ваш ответ: ";
                     getline(cin, userInput);
                     
-                    // Проверка ответа (упрощенная)
+                 
                     if (userInput == answers[i] || 
                         (i == 0 && (userInput == "C++" || userInput == "c++" || userInput == "С++"))) {
                         score += 10;
@@ -84,7 +82,6 @@ int main() {
                 cout << "Текущий счет: " << score << " | Жизни: " << lives << "\n";
             }
             
-            // Результат игры
             cout << "\n========== ИГРА ОКОНЧЕНА ==========\n";
             if (lives > 0) {
                 cout << "Поздравляем! Вы прошли викторину!\n";
@@ -94,7 +91,7 @@ int main() {
             cout << "Ваш итоговый счет: " << score << " очков\n";
             cout << "Оставшиеся жизни: " << lives << "\n\n";
             
-            // Сброс для новой игры
+    
             score = 0;
             lives = 3;
             
@@ -131,4 +128,5 @@ int main() {
     }
     
     return 0;
+
 }
